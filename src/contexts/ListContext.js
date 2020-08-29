@@ -13,8 +13,15 @@ function ListContextProvider(props) {
         ])
     };
 
+    const amendListItem = (string, index) => {
+
+        setState(prevState => [
+            ...prevState, prevState[index] = string
+        ])
+    }
+
     return(
-        <ListContext.Provider value={{ state: state, addListItem: addListItem}}>
+        <ListContext.Provider value={{ state: state, addListItem: addListItem, amendListItem: amendListItem}}>
             {props.children}
         </ListContext.Provider>
     )
