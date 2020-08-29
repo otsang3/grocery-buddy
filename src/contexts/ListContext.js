@@ -17,21 +17,25 @@ function ListContextProvider(props) {
 
         setState(prevState => {
             prevState[index] = string;
-            return [
-                ...prevState
-            ]
+            return [...prevState]
         })
+    }
 
-        console.log(index);
+    const deleteListitem = (index) => {
 
-        // setState(prevState => [
-        //     prevState[index] = string
-        // ])
-
+        setState(prevState => {
+            prevState.splice(index, 1)
+            return [...prevState]
+        })
     }
 
     return(
-        <ListContext.Provider value={{ state: state, addListItem: addListItem, amendListItem: amendListItem}}>
+        <ListContext.Provider value={{ 
+            state: state, 
+            addListItem: addListItem, 
+            amendListItem: amendListItem, 
+            deleteListitem: deleteListitem
+            }}>
             {props.children}
         </ListContext.Provider>
     )
