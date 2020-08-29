@@ -12,7 +12,7 @@ function ListItem(props) {
 
     const listContext = useContext(ListContext);
 
-    const { amendListItem } = listContext;
+    const { amendListItem, deleteListItem } = listContext;
 
     let buttonDisplay = "";
 
@@ -50,7 +50,7 @@ function ListItem(props) {
             <li>{props.item}</li>}
             
             <button onClick={() => handleToggle()}>{buttonDisplay}</button>
-            <button>Delete</button>
+            <button onClick={() => deleteListItem(props.id)}>Delete</button>
         </ul>
     )
 }
