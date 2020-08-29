@@ -15,9 +15,19 @@ function ListContextProvider(props) {
 
     const amendListItem = (string, index) => {
 
-        setState(prevState => [
-            ...prevState, prevState[index] = string
-        ])
+        setState(prevState => {
+            prevState[index] = string;
+            return [
+                ...prevState
+            ]
+        })
+
+        console.log(index);
+
+        // setState(prevState => [
+        //     prevState[index] = string
+        // ])
+
     }
 
     return(

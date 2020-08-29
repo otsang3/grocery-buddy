@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ListContext } from '../contexts/ListContext';
 
 function ListItem(props) {
 
@@ -7,7 +8,11 @@ function ListItem(props) {
         editToggle: false
     }
 
-    const [state, setState] = useState(initialState)
+    const [state, setState] = useState(initialState);
+
+    const listContext = useContext(ListContext);
+
+    const { amendListItem } = listContext;
 
     let buttonDisplay = "";
 
@@ -18,6 +23,10 @@ function ListItem(props) {
     }
 
     const handleToggle = () => {
+
+        if (state.editToggle) {
+            amendListItem(state.text, props.id)
+        }
 
         setState(prevState => {
             return {...prevState, editToggle: !prevState.editToggle}

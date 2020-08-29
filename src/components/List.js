@@ -10,7 +10,7 @@ function List() {
 
     const renderList = state.map((item, index) => {
         return(
-            <ListItem item={item} key={index}/>
+            <ListItem item={item} key={index} id={index}/>
         )
     })
 
