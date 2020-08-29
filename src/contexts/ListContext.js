@@ -24,8 +24,7 @@ function ListContextProvider(props) {
     const deleteListItem = (index) => {
 
         setState(prevState => {
-            console.log(index);
-            console.log(prevState.splice(index, 1));
+            prevState.splice(index, 1);
             return [...prevState]
         })
         

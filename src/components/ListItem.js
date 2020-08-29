@@ -1,7 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ListContext } from '../contexts/ListContext';
 
 function ListItem(props) {
+
+    useEffect(() => {
+        setState({
+            text: props.item,
+            editToggle: false
+        })
+    }, [props])
 
     const initialState = {
         text: props.item,
