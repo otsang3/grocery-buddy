@@ -23,7 +23,6 @@ function Form() {
             value={value}
             />
             <button onClick={() => handleClick()}>Add</button>
-            <p>{state}</p>
         </div>
     )
 }
