@@ -5,10 +5,13 @@ import List from './components/List';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <ListContextProvider>
-        <Form/>
-        <List/>
+        <div className="content">
+          <h3>Grocery Buddy</h3>
+          <Form/>
+          <List/>
+        </div>
       </ListContextProvider>
     </div>
   );
