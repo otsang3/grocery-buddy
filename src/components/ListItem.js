@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ListContext } from '../contexts/ListContext';
-import { FaPen, FaTrash } from 'react-icons/fa';
+import { FaCheck, FaPen, FaTrash } from 'react-icons/fa';
 
 function ListItem(props) {
 
@@ -22,12 +22,12 @@ function ListItem(props) {
 
     const { amendListItem, deleteListItem } = listContext;
 
-    let buttonDisplay = "";
+    let buttonDisplay = null;
 
     if (state.editToggle) {
-        buttonDisplay = "Save"
+        buttonDisplay = <div style={{color: "#32CD32"}}><FaCheck/></div>
     } else {
-        buttonDisplay = <FaPen/>
+        buttonDisplay = <div style={{color: "#87CEFA"}}><FaPen/></div>
     }
 
     const handleToggle = () => {
@@ -52,13 +52,13 @@ function ListItem(props) {
     return(
         <ul>
             {state.editToggle ? 
-            <input value={state.text} onChange={(event) => handleChange(event.target.value)}
+            <input className="flexbox-1" value={state.text} onChange={(event) => handleChange(event.target.value)}
             /> 
             : 
-            <li>{props.item}</li>}
+            <li className="flexbox-1">{props.item}</li>}
             
-            <button onClick={() => handleToggle()}>{buttonDisplay}</button>
-            <button onClick={() => deleteListItem(props.id)}><FaTrash/></button>
+            <button className="flexbox-2" onClick={() => handleToggle()}>{buttonDisplay}</button>
+            <button className="flexbox-2" onClick={() => deleteListItem(props.id)}><div style={{color: "#C0C0C0"}}><FaTrash/></div></button>
         </ul>
     )
 }

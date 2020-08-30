@@ -26,6 +26,12 @@ code {
 
 li {
   list-style: none;
+  color: orange;
+}
+
+ul {
+  display: flex;
+  margin-top: 30px;
 }
 
 .addButton {
@@ -59,7 +65,16 @@ li {
   margin: 0 auto;
 }
 
+.flexbox-1 {
+  flex-basis: 60%;
+  margin-left: 60px;
+}
+
+.flexbox-2 {
+  flex-basis: 5%;
+}
+
 .form {
   margin: 0 auto;
-  width: 35%;
+  width: 30%;
 }
