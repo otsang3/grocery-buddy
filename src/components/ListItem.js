@@ -52,11 +52,10 @@ function ListItem(props) {
     return(
         <ul>
             {state.editToggle ? 
-            <input className="flexbox-1" value={state.text} onChange={(event) => handleChange(event.target.value)}
+            <input className="listEdit" value={state.text} onChange={(event) => handleChange(event.target.value)}
             /> 
             : 
             <li className="flexbox-1">{props.item}</li>}
-            
             <button className="flexbox-2" onClick={() => handleToggle()}>{buttonDisplay}</button>
             <button className="flexbox-2" onClick={() => deleteListItem(props.id)}><div style={{color: "#C0C0C0"}}><FaTrash/></div></button>
         </ul>

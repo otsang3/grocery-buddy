@@ -15,7 +15,7 @@ function Form() {
         setValue("")
     }
 
-    const { state, addListItem } = listContext
+    const { addListItem } = listContext
     
     return(
         <div className="form">
@@ -25,7 +25,6 @@ function Form() {
             placeholder="e.g. bread"
             />
             <button onClick={() => handleClick()}><FaCartPlus size={16}/></button>
-            
         </div>
     )
 }
