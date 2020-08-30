@@ -24,7 +24,7 @@ function Form() {
             value={value}
             placeholder="e.g. bread"
             />
-            <button onClick={() => handleClick()}><FaCartPlus size={16}/></button>
+            <button style={{color: "pink"}} onClick={() => handleClick()}><FaCartPlus size={16}/></button>
         </div>
     )
 }

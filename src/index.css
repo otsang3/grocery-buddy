@@ -80,6 +80,7 @@ ul {
 }
 
 .form {
+  display: flex;
   margin: 0 auto;
   width: 30%;
 }
