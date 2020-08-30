@@ -1,10 +1,19 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const ListContext = createContext();
 
 function ListContextProvider(props) {
 
     const [state, setState] = useState([]);
+
+    useEffect(() => {
+        if (localStorage.getItem("localStorage"))
+        setState(JSON.parse(localStorage.getItem("localStorage")))
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem("localStorage", JSON.stringify(state))
+    }, [state])
 
     const addListItem = (string) => {
 
