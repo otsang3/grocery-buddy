@@ -8,7 +8,7 @@ function App() {
     <div className="app">
       <ListContextProvider>
         <div className="content">
-          <h3>Grocery Buddy</h3>
+          <h2 style={{textAlign: "center"}}>Grocery Buddy</h2>
           <Form/>
           <List/>
         </div>

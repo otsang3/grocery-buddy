@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { ListContext } from '../contexts/ListContext';
+import { FaCartPlus } from 'react-icons/fa';
 
 function Form() {
 
@@ -17,12 +18,14 @@ function Form() {
     const { state, addListItem } = listContext
     
     return(
-        <div>
+        <div className="form">
             <input 
             onChange={(event) => setValue(event.target.value)}
             value={value}
+            placeholder="e.g. bread"
             />
-            <button onClick={() => handleClick()}>Add</button>
+            <button onClick={() => handleClick()}><FaCartPlus size={16}/></button>
+            
         </div>
     )
 }

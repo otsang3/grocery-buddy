@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ListContext } from '../contexts/ListContext';
+import { FaPen, FaTrash } from 'react-icons/fa';
 
 function ListItem(props) {
 
@@ -26,7 +27,7 @@ function ListItem(props) {
     if (state.editToggle) {
         buttonDisplay = "Save"
     } else {
-        buttonDisplay = "Edit"
+        buttonDisplay = <FaPen/>
     }
 
     const handleToggle = () => {
@@ -57,7 +58,7 @@ function ListItem(props) {
             <li>{props.item}</li>}
             
             <button onClick={() => handleToggle()}>{buttonDisplay}</button>
-            <button onClick={() => deleteListItem(props.id)}>Delete</button>
+            <button onClick={() => deleteListItem(props.id)}><FaTrash/></button>
         </ul>
     )
 }
